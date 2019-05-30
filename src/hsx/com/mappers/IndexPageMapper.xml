@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hsx.com.dao.PageClickDao">
+
+	<resultMap type="IndexPage" id="IndexPageResult">
+		<result property="id" column="id"/>
+		<result property="indexcount" column="indexcount"/>
+	</resultMap>
+   
+   <update id="indexcountsetup">
+    update indexpage set indexcount=indexcount+1
+   </update> 
+   
+   <select id="readindexcountsetup" resultType="java.lang.Integer">
+    select indexcount from indexpage 
+   </select>  
+   
+</mapper> 
